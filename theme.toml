@@ -1,0 +1,6 @@
+# themes/stanford-decanter-css/theme.toml
+name = "Stanford Decanter CSS"
+description = "A Hugo theme inspired by Stanford's Decanter identity using pure CSS."
+author = "Your Name"
+license = "MIT"
+min_hugo_version = "0.60.0"

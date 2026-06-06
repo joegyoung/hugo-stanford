@@ -1,0 +1,100 @@
+/* themes/stanford-decanter-css/static/css/theme.css */
+
+:root {
+  /* Stanford Brand Colors */
+  --cardinal-red: #8c1515;
+  --cardinal-dark: #620000;
+  --digital-red: #b1040e;
+  --black: #2e2d29;
+  --cool-grey: #53565a;
+  --fog-light: #f4f4f4;
+  --white: #ffffff;
+  
+  /* Typography */
+  --font-sans: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Stanford", "Source Serif Pro", Georgia, Times, serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--black);
+  background-color: var(--white);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header & Brand Bar */
+.stanford-header {
+  background-color: var(--cardinal-red);
+  color: var(--white);
+  padding: 15px 20px;
+}
+
+.stanford-header a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* Navigation */
+.main-nav {
+  background-color: var(--fog-light);
+  border-bottom: 3px solid var(--cardinal-red);
+  padding: 10px 20px;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  color: var(--digital-red);
+}
+
+/* Layout Grid */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  color: var(--cardinal-dark);
+}
+
+a {
+  color: var(--digital-red);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.stanford-footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 30px 20px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+.stanford-footer a {
+  color: var(--white);
+  text-decoration: underline;
+}

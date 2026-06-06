@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <link rel="stylesheet" href="{{ "css/theme.css" | relURL }}">
+</head>
+<body>
+
+  <header class="stanford-header">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <a href="{{ .Site.BaseURL }}">Stanford University</a>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <ul>
+        <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="stanford-footer">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p>&copy; {{ now.Format "2006" }} Stanford University. Palo Alto, California 94305.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

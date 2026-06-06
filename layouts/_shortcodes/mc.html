@@ -1,0 +1,191 @@
+<div class="center">
+<div class="md-card">
+    <div class="md-card-header">
+        <h3 class="md-title">Server Status</h3>
+        <span class="md-subtitle">https://mc.the-cyberian.com</span>
+    </div>
+    
+    <div id="minecraft-display" class="md-loading">
+        <!-- Modern circular spinner to match Material guidelines -->
+        <div class="md-spinner"></div>
+        <span>Checking server...</span>
+    </div>
+</div>
+</div>
+<style>
+	.center{
+		max-width: 100%;
+		  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+
+		
+	}
+    /* Material Design 3 Tokens & Variables */
+    .md-card {
+        --md-surface: #f7f9ff;          /* Light tonal surface */
+        --md-on-surface: #1a1c1e;       /* Dark text for surface */
+        --md-primary: #0061a4;          /* Material Blue Accent */
+        --md-primary-container: #d1e4ff;/* Soft highlight background */
+        --md-on-primary-container: #001d36;
+        --md-error: #ba1a1a;
+        --md-outline: #73777f;
+        
+        background: var(--md-surface);
+        color: var(--md-on-surface);
+        font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+        padding: 1.5rem;
+        border-radius: 16px;            /* M3 signature deeply rounded corners */
+        min-width: 360px;
+        max-width: 360px;
+        /* Low elevation shadow */
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+        //margin: 1.5rem 0;
+        transition: box-shadow 200ms ease;
+    }
+
+    /* Dark Mode Auto-Adaptor (Optional: remove if your site is strictly light) */
+    @media (prefers-color-scheme: dark) {
+        .md-card {
+            --md-surface: #111318;
+            --md-on-surface: #e2e2e6;
+            --md-primary: #9ecaef;
+            --md-primary-container: #00497d;
+            --md-on-primary-container: #d1e4ff;
+            --md-error: #ffb4ab;
+            --md-outline: #8c9199;
+            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .md-card-header {
+        margin-bottom: 1.25rem;
+    }
+    .md-title { 
+        margin: 0; 
+        font-size: 1.35rem; 
+        font-weight: 500; 
+        letter-spacing: 0.15px;
+    }
+    .md-subtitle {
+        font-size: 0.85rem;
+        color: var(--md-outline);
+        letter-spacing: 0.25px;
+    }
+
+    /* Material "Badge" pill for the player count */
+    .md-badge-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--md-primary-container);
+        color: var(--md-on-primary-container);
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+    .md-count {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    /* List styling mimicking a Material Navigation/List Drawer */
+    .md-list-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 1rem 0 0.5rem 0;
+        color: var(--md-primary);
+    }
+    .md-list { 
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .md-list li { 
+        padding: 0.6rem 0.75rem;
+        margin-bottom: 0.25rem;
+        background: rgba(0, 0, 0, 0.03);
+        border-radius: 8px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+    }
+    /* Small bullet placeholder simulating an avatar dot */
+    .md-list li::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: var(--md-primary);
+        border-radius: 50%;
+        margin-right: 0.75rem;
+    }
+
+    /* Loading States & Spinners */
+    .md-loading, .md-error {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    .md-error { color: var(--md-error); }
+    
+    .md-spinner {
+        width: 20px;
+        height: 20px;
+        border: 2.5px solid var(--md-outline);
+        border-top-color: var(--md-primary);
+        border-radius: 50%;
+        animation: md-spin 800ms linear infinite;
+    }
+    @keyframes md-spin { to { transform: rotate(360deg); } }
+</style>
+
+<script>
+    async function updateMaterialStatus() {
+        const display = document.getElementById('minecraft-display');
+        const apiUrl = 'https://mc.the-cyberian.com/api/online';
+
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const data = await response.json();
+            
+            // Layout using Material Components (Badge Container + List Items)
+            let htmlOutput = `
+                <div class="md-badge-container">
+                    <span>Active Players</span>
+                    <span class="md-count">${data.count}</span>
+                </div>
+            `;
+
+            if (data.count > 0 && data.players.length > 0) {
+                htmlOutput += `<div class="md-list-title">Current Lobby</div>`;
+                htmlOutput += `<ul class="md-list">`;
+                data.players.forEach(player => {
+                    const safeName = player.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                    htmlOutput += `<li>${safeName}</li>`;
+                });
+                htmlOutput += `</ul>`;
+            }
+
+            display.className = '';
+            display.innerHTML = htmlOutput;
+
+        } catch (error) {
+            console.error(error);
+            display.className = 'md-error';
+            display.innerHTML = `
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+                <span>Offline or unreachable</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        updateMaterialStatus();
+        setInterval(updateMaterialStatus, 60000);
+    });
+</script>

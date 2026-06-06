@@ -1,0 +1,29 @@
+<!-- Accessibility Skip Navigation -->
+<a class="su-skip-link" href="#main-content">Skip to main content</a>
+
+
+
+  <div class="su-container">
+    
+      Stanford University
+    </a>
+  </div>
+</div>
+
+<!-- Local Site Banner Header -->
+<header class="su-local-header">
+  <div class="su-container su-local-header__inner">
+    <div class="su-local-header__title">
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    </div>
+    <nav class="su-local-nav" aria-label="Main Navigation">
+      <ul class="su-local-nav__list">
+        {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL | relURL }}" class="su-local-nav__link">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>
