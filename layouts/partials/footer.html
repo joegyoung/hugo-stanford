@@ -1,28 +1,31 @@
-<footer class="su-global-footer" role="contentinfo">
-  <div class="su-container su-global-footer__inner">
+<footer class="su-global-footer" aria-label="Global Footer">
+  <div class="su-global-footer__container">
     
-    <!-- Left Hand Stanford Wordmark Stack -->
     <div class="su-global-footer__logo">
-      <a href="https://www.stanford.edu" aria-label="Stanford University Home">Stanford University</a>
+      <a href="https://www.stanford.edu" class="su-logo" title="Stanford University Home">
+        Stanford University
+      </a>
     </div>
 
-    <!-- Right Hand Navigation Links Mapping Grid -->
-    <nav aria-label="Global Stanford Compliance Links">
-      <ul class="su-global-footer__list">
-        <li><a href="https://www.stanford.edu" class="su-global-footer__link">Stanford Home</a></li>
-        <li><a href="https://visit.stanford.edu" class="su-global-footer__link">Maps &amp; Directions</a></li>
-        <li><a href="https://search.stanford.edu" class="su-global-footer__link">Search Stanford</a></li>
-        <li><a href="https://emergency.stanford.edu" class="su-global-footer__link">Emergency Info</a></li>
-        <li><a href="https://bulletin.stanford.edu" class="su-global-footer__link">Terms of Use</a></li>
-        <li><a href="https://stanford.edu" class="su-global-footer__link">Copyright Complaints</a></li>
-        <li><a href="https://stanford.edu" class="su-global-footer__link">Trademark Notice</a></li>
-        <li><a href="https://officeofaccessibility.stanford.edu" class="su-global-footer__link">Accessibility</a></li>
+    <nav class="su-global-footer__nav" aria-label="University Policy Links">
+      <ul class="su-global-footer__links">
+        <li><a href="https://www.stanford.edu">Stanford Home</a></li>
+        <li><a href="https://visit.stanford.edu/plan/">Maps &amp; Directions</a></li>
+        <li><a href="https://www.stanford.edu/search/">Search Stanford</a></li>
+        <li><a href="https://emergency.stanford.edu">Emergency Info</a></li>
+      </ul>
+      <ul class="su-global-footer__policy-links">
+        <li><a href="https://www.stanford.edu/site/terms/">Terms of Use</a></li>
+        <li><a href="https://www.stanford.edu/site/privacy/">Privacy</a></li>
+        <li><a href="https://uit.stanford.edu/security/copyright-infringement">Copyright</a></li>
+        <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4">Trademarks</a></li>
+        <li><a href="https://equity.stanford.edu/notice-nondiscrimination">Non-Discrimination</a></li>
+        <li><a href="https://www.stanford.edu/site/accessibility/">Accessibility</a></li>
       </ul>
     </nav>
 
-    <!-- Base Legal Block -->
     <div class="su-global-footer__copyright">
-      &copy; {{ now.Format "2006" }} Stanford University. Palo Alto, California 94305.
+      <p>&copy; {{ now.Format "2006" }} Stanford University. Stanford, California 94305.</p>
     </div>
 
   </div>

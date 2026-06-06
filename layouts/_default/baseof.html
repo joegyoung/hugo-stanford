@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <link rel="stylesheet" href="{{ "css/theme.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/identity-guide.css" | relURL }}">
 </head>
 <body>
 
@@ -26,11 +27,8 @@
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer class="stanford-footer">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <p>&copy; {{ now.Format "2006" }} Stanford University. Palo Alto, California 94305.</p>
-    </div>
-  </footer>
+{{ partial "identity-guide.html" . }}
+{{ partial "footer.html" . }}
 
 </body>
 </html>

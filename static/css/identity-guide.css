@@ -1,0 +1,86 @@
+/* Stanford Identity Guide Content Block Styling */
+.su-identity-guide-block {
+  background-color: #ffffff;
+  color: #2e2d29;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid #e5e5e5;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.su-identity-guide-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.su-identity-title {
+  font-family: "Stanford", "Georgia", Times, serif;
+  color: #8c1515;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.su-identity-title--light {
+  font-weight: 300;
+  color: #2e2d29;
+}
+
+.su-identity-lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #3f3e3a;
+}
+
+.su-identity-subtext a,
+.su-identity-contact-list a {
+  color: #006cb8;
+  text-decoration: none;
+}
+
+.su-identity-subtext a:hover,
+.su-identity-contact-list a:hover {
+  text-decoration: underline;
+}
+
+.su-identity-heading {
+  font-size: 1.3rem;
+  color: #2e2d29;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.su-identity-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 1.5;
+}
+
+.su-identity-social-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Desktop Multi-column Grid Split */
+@media (min-width: 768px) {
+  .su-identity-guide-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .su-identity-col {
+    flex: 1;
+    max-width: 48%;
+  }
+}
