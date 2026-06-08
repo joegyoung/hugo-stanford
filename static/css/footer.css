@@ -35,15 +35,7 @@
 
 /* ttttt */
 
-/* Global Footer Styling */
-.su-global-footer {
-  background-color: var(--su-cool-grey);
-  color: var(--su-black);
-  padding: 2rem 1rem;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.85rem;
-  border-top: 3px solid var(--su-cardinal-red);
-}
+
 
 .su-global-footer__container {
 display: flex;
@@ -128,6 +120,7 @@ display: flex;
   border-top: 3px solid var(--su-cardinal-red);
   line-height: 1.5;
   clear: both;
+  flex-shrink: 0;
 }
 
 .su-global-footer__inner {

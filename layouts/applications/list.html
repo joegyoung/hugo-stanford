@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="su-list-container">
+  
+  <!-- Dynamic Title for Sections, Home, or Tag Archives -->
+  <h1 style="font-size: 2.5rem; color: var(--su-cardinal-red); margin-bottom: 24px; font-weight: 700;">
+    {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}
+  </h1>
+
+  <!-- Renders content if your section front matter has text -->
+  {{ if .Content }}
+  <div class="su-list-intro" style="font-size: 1.25rem; line-height: 1.6; margin-bottom: 32px;">
+    {{ .Content }}
+  </div>
+  {{ end }}
+
+  <!-- Loop through pages within this specific loop kind -->
+  <ul style="list-style: none; padding: 0; margin: 0;">
+    {{ range .Pages }}
+    <li style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--su-cool-grey-dark);">
+      <a href="{{ .Permalink }}" style="color: var(--su-black); font-size: 1.5rem; font-weight: 600; text-decoration: underline;">
+        {{ .Title }} 
+      </a>
+      <div>{{.Params.usedFor}}</div>
+    </li>
+    {{ end }}
+  </ul>
+
+</div>
+{{ end }}

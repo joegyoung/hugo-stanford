@@ -1,13 +1,25 @@
 {{ define "main" }}
   <h1>{{ .Title | default .Site.Title }}</h1>
   {{ .Content }}
-
-  <h2>Recent Posts</h2>
+<!--
+  <h2>Application list</h2>
   <ul>
-    {{ range (where .Site.RegularPages "Type" "posts") }}
+    {{ range (where .Site.RegularPages "Type" "applications") }}
       <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a> — <time>{{ .Date.Format "January 2, 2006" }}</time>
+        <a href="{{ .Permalink }}">{{ .Title }}</a> - <time>{{ .Params.usedFor  }}</time> 
       </li>
     {{ end }}
   </ul>
+-->
+<!--
+  <h2>Posts list</h2>
+  <ul>
+    {{ range (where .Site.RegularPages "Type" "posts") }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a> - <time>{{ .Date.Format "January 2, 2006" }}</time> 
+      </li>
+    {{ end }}
+  </ul>
+-->
+
 {{ end }}

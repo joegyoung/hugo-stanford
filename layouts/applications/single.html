@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Params.usedFor }}</p>
+  {{ with .Params.status }}
+    {{ . }}
+  {{ end }}
+{{ end }}
