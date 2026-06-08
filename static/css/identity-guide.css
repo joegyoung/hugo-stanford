@@ -37,8 +37,8 @@
 
 .su-identity-subtext a,
 .su-identity-contact-list a {
-  color: #006cb8;
-  text-decoration: none;
+  color: var(--linkcolor);
+  text-decoration: underline;
 }
 
 .su-identity-subtext a:hover,
