@@ -1,29 +1,37 @@
-<!-- Accessibility Skip Navigation -->
-<a class="su-skip-link" href="#main-content">Skip to main content</a>
+<header class="su-masthead">
+ {{ partial "brand-bar.html" . }}
+  <div class="su-header">
+    <div class="su-header__container">
+      <div class="su-header__logo-lockup">
+        <a href="/" class="su-header__site-link">
+          <span class="su-header__logo-text">OCSD</span>
+          <span class="su-header__logo-pipe">|</span>
+          <span class="su-header__site-title">{{ .Site.Params.siteTitleSubtitle }}</span>
+        </a>
+      </div>
+      
 
 
+      <button class="su-menu-toggle" aria-expanded="false" aria-label="Open Menu" >
+        <span class="su-menu-toggle__icon" aria-hidden="true">☰</span>
+        <span class="su-menu-toggle__text">Menu</span>
+      </button>
+      <ul id="su-popup-menu" class="su-popup-menu">
+    <li><a href="{ .Site.Params.siteURLBase }}">Home</a></li>
+    <li><a href="/apps">Apps List</a></li>
+  </ul>
+    </div>
 
-  <div class="su-container">
-    
-      Stanford University
-    </a>
-  </div>
+<div class="su-header__container">
+  <nav class="su-main-nav" aria-label="Main Navigation">
+  <ul class="su-main-menu">
+    <li class="su-main-menu__item"><a class="su-main-menu__link" href="{{ .Site.Params.siteURLBase }}">Home</a></li>
+    <li class="su-main-menu__item"><a class="su-main-menu__link" href="#">Apps List</a></li>
+  </ul>
+</nav>
 </div>
 
-<!-- Local Site Banner Header -->
-<header class="su-local-header">
-  <div class="su-container su-local-header__inner">
-    <div class="su-local-header__title">
-      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-    </div>
-    <nav class="su-local-nav" aria-label="Main Navigation">
-      <ul class="su-local-nav__list">
-        {{ range .Site.Menus.main }}
-        <li>
-          <a href="{{ .URL | relURL }}" class="su-local-nav__link">{{ .Name }}</a>
-        </li>
-        {{ end }}
-      </ul>
-    </nav>
+
   </div>
 </header>
+

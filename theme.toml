@@ -4,3 +4,6 @@ description = "A Hugo theme inspired by Stanford's Decanter identity using pure 
 author = "Your Name"
 license = "MIT"
 min_hugo_version = "0.60.0"
+
+[params]
+  footerText = "Proudly powered by [Hugo](https://gohugo.io)"

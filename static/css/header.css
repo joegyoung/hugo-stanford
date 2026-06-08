@@ -1,0 +1,97 @@
+/* --- Stanford Header Typography & Global Settings --- */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+.su-masthead {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100%;
+  position: -webkit-sticky; /* Support for older Safari versions */
+  position: sticky;         /* Tells the element to stick when it hits the top */
+  top: 0;                   /* Stick exactly at the top of the viewport */
+  z-index: 1000;            /* Ensures the header floats *above* the page content */
+  background-color: #ffffff; /* Requires a solid background so content doesn't bleed through */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth when floating */
+}
+
+/* --- 1. Top Cardinal Red Brand Bar --- */
+.su-brand-bar {
+  background-color: #8c1515; /* Official Stanford Cardinal Red */
+  padding: 5px 20px;
+}
+
+.su-brand-bar__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.su-brand-bar__logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Stanford", "Georgia", Times, serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.su-brand-bar__logo:hover {
+  text-decoration: underline;
+}
+
+/* --- 2. Main Identity Header --- */
+.su-header {
+  background-color: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.su-header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Lockup text matching 'Stanford | Identity Guide' */
+.su-header__site-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.su-header__logo-text {
+  font-family: "Stanford", "Georgia", Times, serif;
+  color: #8c1515;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.su-header__logo-pipe {
+  color: #b6b6b6;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.su-header__site-title {
+  color: #2e2d29;
+  font-size: 1.8rem;
+  font-weight: 300; /* Light weight match for 'Identity Guide' text */
+  letter-spacing: -0.5px;
+}
+
+
+
+/* Responsive adjustment for extra clean mobile alignment */
+@media (max-width: 600px) {
+  .su-header__logo-text {
+    font-size: 1.8rem;
+  }
+  .su-header__logo-pipe {
+    font-size: 1.5rem;
+  }
+  .su-header__site-title {
+    font-size: 1.4rem;
+  }
+}
