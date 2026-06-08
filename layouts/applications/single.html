@@ -1,6 +1,9 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
+  <p>Submitted on: {{ .Params.timestamp }}</p>
+  <p><a href="{{ .Params.url }}"> {{ .Params.url }} </a> </p>
   <p>{{ .Params.usedFor }}</p>
+
   {{ with .Params.status }}
     {{ . }}
   {{ end }}
