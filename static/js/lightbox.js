@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Target only images inside your post articles
   //const articleImages = document.querySelectorAll('article img');
-  const articleImages = document.querySelectorAll('img');
+  const articleImages = document.querySelectorAll('.container img');
   articleImages.forEach(img => {
     // Add a pointer cursor to let users know it's clickable
     img.style.cursor = 'pointer';

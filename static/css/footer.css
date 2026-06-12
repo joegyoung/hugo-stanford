@@ -1,14 +1,7 @@
 /* themes/stanford-decanter-css/static/css/theme.css */
 
 :root {
-  /* Stanford Brand Colors */
-  --cardinal-red: #8c1515;
-  --cardinal-dark: #620000;
-  --digital-red: #b1040e;
-  --black: #2e2d29;
-  --cool-grey: #53565a;
-  --fog-light: #f4f4f4;
-  --white: #ffffff;
+
   
   /* Typography */
   --font-sans: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -50,7 +43,7 @@ display: flex;
 .su-logo {
   font-family: "Stanford", "Georgia", Times, serif;
   padding-right:  3rem;
-  padding-top:  1rem;
+  /*padding-top:  1rem;*/
   color: var(--su-cardinal-red);
   font-size: 1.5rem;
   text-decoration: none;
@@ -70,7 +63,7 @@ display: flex;
 
 .su-global-footer__links a, 
 .su-global-footer__policy-links a {
-  color: var(--su-black);
+  color: var(--black);
   text-decoration: none;
   font-weight: 600;
 }
@@ -81,11 +74,7 @@ display: flex;
   text-decoration: underline;
 }
 
-.su-global-footer__copyright {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: #555;
-}
+
 
 /* Desktop Layout Adjustment */
 @media (min-width: 768px) {
@@ -98,26 +87,17 @@ display: flex;
   .su-global-footer__policy-links {
     justify-content: flex-start;
   }
-
-
-/*######*/
-
-
-/* Core Brand Colors */
-:root {
-  --su-cardinal-red: #8c1515;
-  --su-black: #2e2d29;
-  --su-cool-grey: #f4f4f4;
 }
+
 
 /* Global Footer Container */
 .su-global-footer {
-  background-color: var(--su-cool-grey);
-  color: var(--su-black);
+  background-color: var(--cool-grey);
+  color: var(--black);
   padding: 2rem 1.5rem;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.85rem;
-  border-top: 3px solid var(--su-cardinal-red);
+  border-top: 3px solid var(--cardinal-red);
   line-height: 1.5;
   clear: both;
   flex-shrink: 0;
@@ -134,7 +114,7 @@ display: flex;
 /* Stanford Wordmark Styling */
 .su-global-footer__logo a {
   font-family: "Stanford", "Georgia", Times, serif;
-  color: var(--su-cardinal-red);
+  color: var(--cardinal-red);
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: 700;
@@ -153,21 +133,24 @@ display: flex;
 }
 
 .su-global-footer__link {
-  color: var(--su-black);
+  color: var(--black);
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
 }
 
 .su-global-footer__link:hover {
-  color: var(--su-cardinal-red);
+  color: var(--cardinal-red);
   text-decoration: underline;
 }
 
+
+
 /* Copyright Block */
 .su-global-footer__copyright {
+  margin-top: 1rem;
   font-size: 0.8rem;
-  color: #5e5d59;
+  color: var(--black);
   margin-top: 0.5rem;
 }
 
@@ -190,5 +173,13 @@ display: flex;
 }
 
 
+
+.su-global-footer__location_header {
+  font-weight: 700;
+}
+
+.su-global-footer__location {
+  margin-top: 1rem;
+}
 
 
